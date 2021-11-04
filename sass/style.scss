@@ -1,5 +1,204 @@
 @import 'variables';
 
-body{
-    background-color: red;
+* {
+    margin     : 0;
+    padding    : 0;
+    font-family: $font-family;
+    color      : $color-grayish-blue;
+}
+
+.container {
+    width         : 100%;
+    position      : relative;
+    display       : flex;
+    align-content : center;
+    flex-direction: column;
+    flex-wrap     : wrap;
+
+    &__fondo-top {
+        position: absolute;
+        top     : 0;
+        right   : 0;
+        z-index : -1;
+    }
+
+    &__fondo-bottom {
+        position: absolute;
+        bottom  : 0;
+        left    : 0;
+    }
+
+    &__title {
+        margin-top: 30px;
+        text-align: center;
+        color     : $color-grayish-blue;
+
+        &-switch {
+            position       : relative;
+            display        : flex;
+            justify-content: space-around;
+            align-items    : center;
+            margin-inline  : auto;
+            width          : 60px;
+            height         : 35px;
+            margin-top     : 40px;
+            z-index        : 1;
+
+            h5 {
+                margin: 0px 50px;
+                color : $color-light-grayish-blue;
+            }
+        }
+    }
+}
+
+.slider {
+    position        : absolute;
+    top             : 0;
+    left            : 0;
+    right           : 0;
+    bottom          : 0;
+    background-color: #9094ee;
+    border-radius   : 35px;
+
+    &:before {
+        position          : absolute;
+        content           : "";
+        height            : 25px;
+        width             : 25px;
+        border-radius     : 50%;
+        left              : 5px;
+        bottom            : 5px;
+        background-color  : $color-very-light-grayis-blue;
+        -webkit-transition: .5s;
+        transition        : all 0.5s ease;
+    }
+
+    &:hover {
+        background-color: #6a70e2;
+    }
+}
+
+input:checked+.slider:before {
+    transform: translateX(25px);
+}
+
+.cards {
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+    margin-top     : 60px;
+    flex-wrap      : wrap;
+    z-index        : 1;
+
+    .card {
+        display        : flex;
+        width          : 300px;
+        border-radius  : 5px;
+        box-shadow     : 10px 10px 10px 5px $color-light-grayish-blue;
+        flex-direction : column;
+        justify-content: space-around;
+        text-align     : center;
+        margin-bottom  : 60px;
+    }
+
+    .card-blue {
+        background   : $color-linear-gradient;
+        color        : $color-very-light-grayis-blue;
+        height       : 460px;
+        margin-inline: 10px;
+
+        h1,
+        h3,
+        h5,
+        p {
+            color: $color-very-light-grayis-blue;
+        }
+    }
+
+    .card-white {
+        background: $color-very-light-grayis-blue;
+        color     : $color-grayish-blue;
+        height    : 430px;
+
+        h1,
+        h3 {
+            color: $color-dark-grayish-blue;
+        }
+    }
+
+    .card-title {
+        margin-top: 40px;
+    }
+
+    .card-price {
+        padding        : 1rem;
+        margin-inline  : 1.5rem;
+        display        : flex;
+        justify-content: center;
+        align-items    : center;
+
+        h1 {
+            font-size: 50px;
+        }
+
+        h3 {
+            font-size: $font-size;
+        }
+    }
+
+    .card-p {
+        padding      : 16px;
+        margin-inline: 24px;
+    }
+
+    .border-white {
+        border-bottom: 1px solid $color-very-light-grayis-blue;
+    }
+
+    .border-black {
+        border-bottom: 1px solid $color-grayish-blue;
+    }
+
+    .btn {
+        height       : 40px;
+        cursor       : pointer;
+        border-radius: 5px;
+        transition   : all 0.3s ease;
+        margin       : 2rem 1.5rem;
+    }
+
+    .btn-blue {
+        color           : $color-linear-gradient;
+        background-color: $color-very-light-grayis-blue;
+        border          : 1px solid $color-very-light-grayis-blue;
+    }
+
+    .btn-white {
+        background: $color-linear-gradient;
+        color     : $color-very-light-grayis-blue;
+        border    : none;
+    }
+
+    .btn-blue:hover {
+        background-color: transparent;
+        color           : $color-very-light-grayis-blue;
+    }
+
+    .btn-white:hover {
+        color     : #696fdd;
+        background: transparent;
+        border    : 1px solid $color-dark-grayish-blue;
+    }
+}
+
+.attribution {
+    a {
+        color          : $color-linear-gradient;
+        text-decoration: none;
+    }
+
+    a:hover {
+        color: violet;
+    }
 }
